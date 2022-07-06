@@ -29,7 +29,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: anshshrivastava/smartbankfrontend:nginx
+      - image: anshshrivastava/sba-frontend:nginxv2
         name: frontend
         imagePullPolicy: Always
         ports:
