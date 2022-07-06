@@ -65,6 +65,26 @@ spec:
       - image: hub.brainupgrade.net/anshshrivastava/apiserver:usage
         name: sba-apiserver
         imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 2
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 100
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        readinessProbe:
+          failureThreshold: 2
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
         volumeMounts: 
         - mountPath: /elastic/apm/agent 
           name: elastic-apm-agent          
@@ -90,7 +110,7 @@ spec:
                 name: app-config
                 key: ELASTIC_APM_APPLICATION_PACKAGES
           - name: ELASTIC_APM_SERVICE_NAME 
-            value: "apiserver-ansh" 
+            value: "apiserver-rahul" 
           - name: ELASTIC_APM_ENVIRONMENT 
             value: prod
           - name: ELASTIC_APM_LOG_LEVEL 
@@ -104,4 +124,4 @@ spec:
           - name: management.metrics.web.server.request.autotime.enabled
             value: "true"
           - name: management.metrics.tags.application
-            value: apiserver-ansh
+            value: apiserver-rahul
