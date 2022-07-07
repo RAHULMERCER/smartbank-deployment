@@ -62,7 +62,7 @@ spec:
           name: elastic-apm-agent 
         command: ['cp', '-v', '/usr/agent/elastic-apm-agent.jar', '/elastic/apm/agent']     
       containers:
-      - image: hub.brainupgrade.net/rahul/observability:observability
+      - image: hub.brainupgrade.net/rahul/apiserver:observability
         name: sba-observability
         imagePullPolicy: Always
         livenessProbe:
