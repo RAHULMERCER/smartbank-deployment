@@ -17,20 +17,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: frontend-blue
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: frontend-blue
   template:
     metadata:
       labels:
-        app: frontend
+        app: frontend-blue
     spec:
       containers:
       - image: rahulmercer/sba-frontend:blue
-        name: frontend
+        name: frontend-blue
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -57,7 +57,7 @@ data:
         server {
             listen 80;
             listen [::]:80 default_server;
-            server_name frontend;
+            server_name frontend-blue;
             default_type application/octet-stream;
             gzip on;
             gzip_http_version 1.1;
