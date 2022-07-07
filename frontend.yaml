@@ -23,15 +23,15 @@ spec:
   selector:
     matchLabels:
       app: frontend
-      release: v2
+      release: v1
   template:
     metadata:
       labels:
         app: frontend
-        release: v2
+        release: v1
     spec:
       containers:
-      - image: rahulmercer/sba-frontend:blue
+      - image: anshshrivastava/sba-frontend:nginxv2
         name: frontend
         imagePullPolicy: Always
         ports:
