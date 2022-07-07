@@ -23,12 +23,10 @@ spec:
   selector:
     matchLabels:
       app: frontend
-      release: v2 
   template:
     metadata:
       labels:
         app: frontend
-        release: v2
     spec:
       containers:
       - image: rahulmercer/sba-frontend:blue
