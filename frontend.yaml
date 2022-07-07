@@ -29,7 +29,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: anshshrivastava/sba-frontend:nginxv2
+      - image: rahulmercer/sba-frontend:blue
         name: frontend
         imagePullPolicy: Always
         ports:
